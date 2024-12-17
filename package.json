@@ -1,0 +1,54 @@
+{
+  "name": "rand-generator",
+  "displayName": "Random Number Generator",
+  "publisher": "hiroshi",
+  "description": "Random number generator that allows you generate one or many integer or float numbers. You can even generate ALL the numbers just clciking one buttons combination.",
+  "version": "0.0.1",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/hiroshi30/rand-generator"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "engines": {
+    "vscode": "^1.96.0"
+  },
+  "main": "./out/extension.js",
+  "contributes": {
+    "commands": [
+        {
+            "command": "rand-generator.generateRandomNumber",
+            "title": "Generate Random Number"
+        },
+        
+        {
+          "command": "rand-generator.generateAllRandomNumbers",
+          "title": "Generate All Random Numbers"
+      }
+    ],
+    "keybindings": [
+        {
+            "command": "rand-generator.generateRandomNumber",
+            "key": "alt+shift+q",
+            "when": "editorTextFocus"
+        },
+        {
+            "command": "rand-generator.generateAllRandomNumbers",
+            "key": "alt+shift+w"
+        }
+    ]
+  },
+  "scripts": {
+    "vscode:prepublish": "npm run compile",
+    "compile": "npx tsc -p ./",
+    "watch": "npx tsc -watch -p ./"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.96.0",
+    "@types/node": "20.x",
+    "eslint": "^9.16.0",
+    "typescript": "^5.7.2"
+  }
+}
